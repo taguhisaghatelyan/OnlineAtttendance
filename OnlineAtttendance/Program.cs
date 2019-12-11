@@ -6,10 +6,28 @@ using System.Threading.Tasks;
 
 namespace OnlineAtttendance
 {
-    class Program
+    //enum BannedUsers
+    //{
+    //    Jack,
+    //    Steven,
+    //    Mathew
+    //}
+    class User
     {
-        static void Main(string[] args)
+        public event Action<string> Banned;
+
+        public void OnlineAtt(string user)
         {
+
+            if (user == "Jack" || user == "Steven" || user == "Mathew")
+            {
+                this.Banned(user);
+            }
+            else
+            {
+                Console.WriteLine($"Welcome {user}");
+            }
         }
     }
+
 }
